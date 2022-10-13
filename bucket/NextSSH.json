@@ -1,0 +1,31 @@
+{
+    "version": "2.2.0",
+    "description": "简洁直观的SSH客户端",
+    "homepage": "https://codemutex.com/",
+    "license": "Shareware",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/codemutex/NextSSH-userland/releases/download/v2.2.0/NextSSH.Setup.2.2.0.exe#/dl.7z",
+            "hash": "724aa56800076d035e44a562ef0d2922898a89af602911b1bf4bac4fbfe88d68",
+            "pre_install": [
+                "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+                "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\Uninstall*\" -Force -Recurse"
+            ]
+        }
+    },
+    "bin": [
+        [
+            "NextSSH.exe",
+            "NextSSH",
+            "--user-data-dir=\"$dir\\User Data\""
+        ]
+    ],
+    "shortcuts": [
+        [
+            "NextSSH.exe",
+            "NextSSH",
+            "--user-data-dir=\"$dir\\User Data\""
+        ]
+    ],
+    "persist": "User Data"
+}
